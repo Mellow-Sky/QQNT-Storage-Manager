@@ -1,0 +1,13 @@
+[package]
+name = "qqnt-discovery"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+qqnt-adapters.workspace = true
+cap-std.workspace = true
+dirs = "6"
+
+[dev-dependencies]
+tempfile.workspace = true

@@ -1,0 +1,11 @@
+{
+  "manifest_version": 4,
+  "type": "extension",
+  "name": "QQNT 存储管理器入口",
+  "slug": "qqnt_storage_manager",
+  "description": "只读显示独立管理器扫描摘要，并打开已安装的 QQNT Storage Manager；插件不扫描或删除 QQ 文件。",
+  "version": "0.2.0",
+  "authors": [{"name":"QQNT Storage Manager contributors"}],
+  "platform": ["win32"],
+  "injects": {"main":"./main.cjs","preload":"./preload.cjs","renderer":"./renderer.js"}
+}

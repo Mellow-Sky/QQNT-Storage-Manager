@@ -1,0 +1,5 @@
+* text=auto eol=lf
+prompt.md -text whitespace=cr-at-eol
+*.png binary
+*.ico binary
+*.mp4 binary

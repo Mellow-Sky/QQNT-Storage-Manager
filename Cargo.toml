@@ -1,0 +1,30 @@
+[workspace]
+members = ["crates/*", "apps/desktop/src-tauri"]
+default-members = ["crates/qqnt-model", "crates/qqnt-adapters", "crates/qqnt-discovery", "crates/qqnt-classifier", "crates/qqnt-scanner", "crates/qqnt-indexer", "crates/qqnt-cleaner"]
+resolver = "2"
+
+[workspace.package]
+version = "0.4.1"
+edition = "2021"
+license = "MIT"
+rust-version = "1.90"
+
+[workspace.dependencies]
+qqnt-model = { path = "crates/qqnt-model" }
+qqnt-adapters = { path = "crates/qqnt-adapters" }
+qqnt-discovery = { path = "crates/qqnt-discovery" }
+qqnt-classifier = { path = "crates/qqnt-classifier" }
+qqnt-scanner = { path = "crates/qqnt-scanner" }
+qqnt-indexer = { path = "crates/qqnt-indexer" }
+qqnt-cleaner = { path = "crates/qqnt-cleaner" }
+qqnt-fs = { path = "crates/qqnt-fs" }
+qqnt-media = { path = "crates/qqnt-media" }
+qqnt-policy = { path = "crates/qqnt-policy" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+cap-std = "4.0.3"
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+tracing = "0.1"
+tempfile = "3"

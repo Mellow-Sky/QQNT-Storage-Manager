@@ -1,0 +1,9 @@
+[package]
+name="qqnt-policy"
+version.workspace=true
+edition.workspace=true
+license.workspace=true
+
+[dependencies]
+qqnt-model.workspace=true
+serde.workspace=true

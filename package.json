@@ -1,0 +1,29 @@
+{
+  "name": "qqnt-storage-manager",
+  "version": "0.4.1",
+  "private": true,
+  "workspaces": [
+    "apps/desktop"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w apps/desktop",
+    "build": "npm run build -w apps/desktop",
+    "check": "npm run check -w apps/desktop",
+    "format": "prettier --write apps/desktop/src apps/desktop/*.json apps/desktop/*.ts",
+    "format:check": "prettier --check apps/desktop/src apps/desktop/*.json apps/desktop/*.ts",
+    "desktop": "npm run tauri -w apps/desktop -- dev",
+    "desktop:build": "npm run tauri -w apps/desktop -- build",
+    "fixture": "python3 scripts/create-fixture.py",
+    "test:ui": "playwright test",
+    "test:plugin": "node --test tests/plugin/*.test.cjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "prettier": "^3.6.2"
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "^11.0.1"
+    }
+  }
+}

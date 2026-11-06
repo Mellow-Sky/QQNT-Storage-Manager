@@ -1,0 +1,57 @@
+[package]
+name = "qqnt-desktop"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+build = "build.rs"
+default-run="qqnt-storage-manager"
+
+[lib]
+name = "qqnt_desktop"
+crate-type = ["lib", "cdylib", "staticlib"]
+
+[[bin]]
+name = "qqnt-storage-manager"
+path = "src/main.rs"
+required-features = ["desktop"]
+
+[[bin]]
+name = "qqnt-desktop-smoke"
+path = "smoke/main.rs"
+required-features = ["desktop", "custom-protocol", "native-smoke"]
+
+[features]
+default = []
+desktop = ["dep:tauri", "dep:tauri-build", "dep:tauri-plugin-dialog", "dep:tracing-subscriber"]
+custom-protocol = ["tauri/custom-protocol"]
+native-smoke = ["dep:tempfile"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [], optional = true }
+
+[dependencies]
+qqnt-model.workspace = true
+qqnt-adapters.workspace = true
+qqnt-discovery.workspace = true
+qqnt-scanner.workspace = true
+qqnt-indexer.workspace = true
+qqnt-media.workspace = true
+qqnt-fs.workspace = true
+qqnt-cleaner.workspace = true
+qqnt-classifier.workspace = true
+qqnt-policy.workspace = true
+fs2="0.4"
+chrono.workspace = true
+blake3 = "1"
+cap-std.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tempfile = { workspace = true, optional = true }
+uuid.workspace = true
+tracing.workspace = true
+tauri = { version = "2.12.4", features = [], optional = true }
+tauri-plugin-dialog = { version = "2", optional = true }
+tracing-subscriber = { version = "0.3", features = ["env-filter"], optional = true }
+
+[dev-dependencies]
+tempfile.workspace = true

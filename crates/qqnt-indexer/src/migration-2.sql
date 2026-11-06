@@ -1,0 +1,6 @@
+BEGIN IMMEDIATE;
+CREATE TABLE quarantine_items(id TEXT PRIMARY KEY,root TEXT NOT NULL,state TEXT NOT NULL,payload TEXT NOT NULL);
+CREATE TABLE media_cache(key TEXT PRIMARY KEY,filename TEXT NOT NULL,size INTEGER NOT NULL,created INTEGER NOT NULL,last_access INTEGER NOT NULL,digest TEXT NOT NULL);
+CREATE TABLE scan_cache(root TEXT NOT NULL,path TEXT NOT NULL,adapter TEXT NOT NULL,fingerprint TEXT NOT NULL,payload TEXT NOT NULL,PRIMARY KEY(root,path));
+PRAGMA user_version=2;
+COMMIT;

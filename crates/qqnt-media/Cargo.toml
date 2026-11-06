@@ -1,0 +1,16 @@
+[package]
+name="qqnt-media"
+version.workspace=true
+edition.workspace=true
+license.workspace=true
+
+[dependencies]
+qqnt-model.workspace=true
+qqnt-fs.workspace=true
+qqnt-adapters.workspace=true
+cap-std.workspace=true
+image={version="0.25.10",default-features=false,features=["jpeg","png","gif","webp","bmp","tiff"]}
+base64="0.22"
+
+[dev-dependencies]
+tempfile.workspace=true
